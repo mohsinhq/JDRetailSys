@@ -1,3 +1,4 @@
+# Implementing the list object
 class Node:
     def __init__(self, d, n):
         self.data = d
@@ -100,12 +101,16 @@ class LinkedList:
             ptr = ptr.next
             i -= 1
         ptr.data = d
+
+# The shoe object, holding the information of each shoe
+# Mistake made, shelves contain shoes, shoes don't contain shelves
 class shoe:
     def __init__(self, name, UPC, shelf):
         self.name = name
         self.UPC = UPC
         self.shelf = shelf
 
+# Class for gap request, 
 class gapReq:
 	def __init__(self, shoe):
 		self.name = shoe.name
@@ -175,7 +180,7 @@ class display:
         while (self.db.searchByBarcode(self.shoebc) == -1):
             print("INVALID BARCODE"/n)
             self.shoebc = input("Enter barcode: ")
-        addGap(self, self.shoebc)
+        addGap(self.shoebc)
         print("Label Printed")
 
     def viewGapsOnShelf(self, s):
