@@ -160,7 +160,6 @@ class display:
     def __init__(self):
         self.db = db()
         self.gapList = LinkedList()
-        print("User: 179029239420015 Pr: 1")
         print("1. Footwear Fill Up") 
         print("2. Gap Requests")
         print("3. Set Printer")
@@ -189,8 +188,6 @@ class display:
             print(i, ". ")
             if (self.gapList.get(i).shelf == s):
                 self.gapList.get(i).showDetails()
-                
-            
         
     def viewGaps(self):
         for i in range(1, self.gapList.length):
@@ -200,5 +197,5 @@ class display:
         while (self.db.searchByShelf(self.shoeshelfinput) == -1):
             print("NO ORDERS ON SHELF")
             self.shoeshelfinput = input("Scan Shelf: ")
-        viewGapsOnShelf(self.shoeshelfinput)
+        self.db.viewGapsOnShelf(self.shoeshelfinput)
         option2 = input("Enter line to change status:")
